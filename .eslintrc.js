@@ -10,7 +10,8 @@ module.exports = {
   },
   extends: 'eslint:recommended',
   rules: {
-    'quotes': [2, 'single']
+    'quotes': [2, 'single'],
+    'no-cond-assign': 0
   },
   globals: { 
     localStorage: true,
