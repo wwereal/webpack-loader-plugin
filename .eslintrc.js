@@ -18,5 +18,9 @@ module.exports = {
     localStorage: true,
     window : true,
     document: true
-  }
+  },
+  plugins: [
+    'html',
+    'ejs'
+  ]
 };

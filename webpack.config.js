@@ -1,4 +1,5 @@
 const { resolve } = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const AnalyzeWebpackPlugin = require('./plugins/analyze-webpack-plugin');
 const DefineWebpackPlugin = require('./plugins/define-webpack-plugin');
 const ResourceAnalyzerPlugin = require('./plugins/resource-analyzer-plugin');
@@ -45,6 +46,14 @@ module.exports = {
         ]
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            template: './public/index.ejs',
+            filename: 'index.html',
+            templateParameters: {
+                title: 'My App',
+                username: 'Tony',
+            }
+        }),
         new AnalyzeWebpackPlugin(),
         new DefineWebpackPlugin({
             BASE_URL: 'http://api.pro.com',
