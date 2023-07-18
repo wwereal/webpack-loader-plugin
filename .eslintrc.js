@@ -13,6 +13,7 @@ module.exports = {
     'quotes': [2, 'single'],
     'no-cond-assign': 0
   },
+  ignorePatterns: ['dist'],
   globals: { 
     localStorage: true,
     window : true,
