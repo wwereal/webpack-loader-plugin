@@ -1,6 +1,8 @@
 const { resolve } = require('path');
 const AnalyzeWebpackPlugin = require('./plugins/analyze-webpack-plugin');
 const DefineWebpackPlugin = require('./plugins/define-webpack-plugin');
+const ResourceAnalyzerPlugin = require('./plugins/resource-analyzer-plugin');
+
 module.exports = {
     mode: 'none',
     entry: './src/main.js',
@@ -47,6 +49,7 @@ module.exports = {
         new DefineWebpackPlugin({
             BASE_URL: 'http://api.pro.com',
             ENV: process.env.NODE_ENV,
-        })
+        }),
+        new ResourceAnalyzerPlugin('dist/resource-analysis.json')
     ]
 }
